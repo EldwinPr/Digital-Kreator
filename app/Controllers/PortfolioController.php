@@ -237,21 +237,24 @@ class PortfolioController extends ResourceController
         if (!session()->get('user_id')) {
             return $this->failUnauthorized('You must be logged in to like portfolios.');
         }
-
-        // Get portfolio ID
-        $id = $id ?? $this->request->getGet('id');
+    
+        // Get portfolio ID from different possible sources
+        $portfolioId = $id ?? $this->request->getPost('id') ?? $this->request->getGet('id');
         
-        if (!$id) {
+        if (!$portfolioId) {
             return $this->fail('Portfolio ID is required');
         }
-
+    
+        // Debug line to check the ID
+        log_message('debug', 'Portfolio ID received: ' . $portfolioId);
+    
         // Update the likes
-        if ($this->portfolioModel->updateLikes($id)) {
+        if ($this->portfolioModel->updateLikes($portfolioId)) {
             return $this->respondUpdated([
                 'message' => 'Portfolio liked successfully!'
             ]);
         }
-
+    
         return $this->fail('Failed to like portfolio.');
     }
 }
