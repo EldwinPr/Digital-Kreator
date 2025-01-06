@@ -1,2 +1,67 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+# CodeIgniter 4 specific
+writable/cache/*
+!writable/cache/index.html
+writable/logs/*
+!writable/logs/index.html
+writable/session/*
+!writable/session/index.html
+writable/uploads/*
+!writable/uploads/index.html
+writable/debugbar/*
+public/uploads/*
+
+# Environment files
+.env
+.env.backup
+.env.development
+.env.production
+.env.testing
+
+# IDE Files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+nbproject/
+.DS_Store
+
+# Dependencies
+vendor/
+node_modules/
+composer.lock
+package-lock.json
+
+# Database
+*.sqlite
+*.db
+
+# Log files
+*.log
+
+# Docker
+docker-compose.override.yml
+
+# Testing
+phpunit.xml
+tests/coverage/*
+
+# Temporary files
+*.swp
+*.swo
+*.tmp
+*.temp
+*.bak
+.php_cs.cache
+
+# Cache files
+.php-cs-fixer.cache
+.phpunit.result.cache
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
