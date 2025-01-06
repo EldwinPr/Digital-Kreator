@@ -239,14 +239,14 @@ class PortfolioController extends ResourceController
         }
 
         // Get portfolio ID
-        $portfolioId = $id ?? $this->request->getGet('id');
+        $id = $id ?? $this->request->getGet('id');
         
-        if (!$portfolioId) {
+        if (!$id) {
             return $this->fail('Portfolio ID is required');
         }
 
         // Update the likes
-        if ($this->portfolioModel->updateLikes($portfolioId)) {
+        if ($this->portfolioModel->updateLikes($id)) {
             return $this->respondUpdated([
                 'message' => 'Portfolio liked successfully!'
             ]);
