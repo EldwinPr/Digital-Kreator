@@ -190,7 +190,7 @@ class PortfolioController extends ResourceController
     {
         $portfolio = $this->portfolioModel->findById($id);
         if (!$portfolio) {
-            return $this->failNotFound('Portfolio not found.');
+            return $this->respond([]);
         }
 
         return $this->respond($portfolio);
