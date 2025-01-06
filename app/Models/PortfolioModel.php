@@ -21,7 +21,8 @@ class PortfolioModel extends Model
     protected $updatedField = 'updated_at';
 
     // Create a new portfolio entry
-    public function createPortfolio($data){
+    public function createPortfolio($data)
+    {
         if ($this->save($data)) {
             return $this->insertID;
         }
@@ -29,7 +30,8 @@ class PortfolioModel extends Model
     }
 
     // Update an existing portfolio
-    public function updatePortfolio($id, $data){
+    public function updatePortfolio($id, $data)
+    {
         if ($this->update($id, $data)) {
             return true;
         }
@@ -37,7 +39,8 @@ class PortfolioModel extends Model
     }
 
     // Delete a portfolio
-    public function deletePortfolio($id){
+    public function deletePortfolio($id)
+    {
         if ($this->delete($id)) {
             return true;
         }
@@ -45,12 +48,14 @@ class PortfolioModel extends Model
     }
 
     // Find all portfolios
-    public function findAllPortfolios(){
+    public function findAllPortfolios()
+    {
         return $this->findAll();
     }
 
     // Find portfolio by ID
-    public function findById($id){
+    public function findById($id)
+    {
         if (!$id) {
             return null;
         }
@@ -81,6 +86,7 @@ class PortfolioModel extends Model
         return $result;
     }
 
+    // Update likes count
     public function updateLikes($id)
     {
         $portfolio = $this->find($id);
