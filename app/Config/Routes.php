@@ -31,5 +31,5 @@ $routes->group('portfolio', function($routes) {
     $routes->add('findById', 'PortfolioController::findById');
     $routes->add('findByCreator', 'PortfolioController::findByCreator');
     $routes->add('findByCategory', 'PortfolioController::findByCategory');
-    $routes->POST('like', 'PortfolioController::like');
+    $routes->add('portfolio/like/(:num)', 'PortfolioController::like/$1');
 });
