@@ -24,7 +24,7 @@ class PortfolioController extends ResourceController
             return $this->failUnauthorized('Only creators can add portfolios.');
         }
 
-	$filePath = null;
+	    $filePath = null;
 
         // Handle file upload if exists
         if ($this->request->getFile('portfolio_file')) {
