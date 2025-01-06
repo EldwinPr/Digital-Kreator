@@ -120,3 +120,7 @@ DEBUG - 2025-01-06 04:22:39 --> Login attempt - Email: john@example.com
 DEBUG - 2025-01-06 04:22:39 --> Stored hash: $2y$10$ll8q9chKKhMZoY0q0S6vXOg96rZQPfNZeC6uzyuyLFd5MLrml4kLm
 DEBUG - 2025-01-06 04:22:39 --> Submitted password: password123
 INFO - 2025-01-06 04:22:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-06 08:50:35 --> Login attempt - Email: john@example.com
+DEBUG - 2025-01-06 08:50:35 --> Stored hash: $2y$10$ll8q9chKKhMZoY0q0S6vXOg96rZQPfNZeC6uzyuyLFd5MLrml4kLm
+DEBUG - 2025-01-06 08:50:35 --> Submitted password: password123
+INFO - 2025-01-06 08:50:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

@@ -80,7 +80,7 @@ class PortfolioController extends ResourceController
         }
     
         // Check if user is authorized (creator of the portfolio or admin)
-        if ($portfolio['creator_id'] != $userId && $userRole !== 'admin') {
+        if ($portfolio['creator_id'] != $userId && $userRole != 'admin') {
             return $this->failUnauthorized('You are not authorized to update this portfolio.');
         }
     
