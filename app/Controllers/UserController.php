@@ -135,6 +135,6 @@ class UserController extends ResourceController
             return $this->failNotFound('User not found');
         }
 
-        return $this->respond($user);
+        return $this->respond($user['id']);
     }
 }
