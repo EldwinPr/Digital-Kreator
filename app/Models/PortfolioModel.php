@@ -51,7 +51,14 @@ class PortfolioModel extends Model
 
     // Find portfolio by ID
     public function findById($id){
-        return $this->find($id);
+        if (!$id) {
+            return null;
+        }
+        $result = $this->find($id);
+        if (!$result) {
+            return null;
+        }
+        return $result;
     }
 
     // Find portfolios by creator

@@ -186,15 +186,14 @@ class PortfolioController extends ResourceController
         return $this->respond($portfolios);
     }
 
-    public function findById($id){
-        if (!$id) {
-            return null;
+    public function findById($id = null)
+    {
+        $portfolio = $this->portfolioModel->findById($id);
+        if (!$portfolio) {
+            return $this->failNotFound('Portfolio not found.');
         }
-        $result = $this->find($id);
-        if (!$result) {
-            return null;
-        }
-        return $result;
+
+        return $this->respond($portfolio);
     }
 
     public function findByCreator($name = null)
