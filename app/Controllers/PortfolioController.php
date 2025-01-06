@@ -102,7 +102,7 @@ class PortfolioController extends ResourceController
     
         // Handle file upload if new file is provided
         $file = $this->request->getFile('portfolio_file');
-        $filePath = $portfolio['file_path']; // Access array key instead of property
+        $filePath = $portfolio['file_path'];
     
         if ($file && $file->isValid() && !$file->hasMoved()) {
             // Delete old file if exists
@@ -140,13 +140,9 @@ class PortfolioController extends ResourceController
     {
         $userId = session()->get('user_id'); 
         $userRole = session()->get('user_role');
-    
-        // Debug untuk cek nilai ID yang diterima
-        log_message('debug', 'URL ID: ' . $id);
-        log_message('debug', 'POST ID: ' . $this->request->getPost('id'));
         
         // Get portfolio ID from URL param or POST data
-        $portfolioId = $id ?? $this->request->getGet('id') ?? $this->request->getPost('id');
+        $portfolioId = $id ?? $this->request->getGet('id');
     
         if (!$portfolioId) {
             return $this->fail([
