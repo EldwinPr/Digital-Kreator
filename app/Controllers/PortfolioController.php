@@ -24,15 +24,29 @@ class PortfolioController extends ResourceController
             return $this->failUnauthorized('Only creators can add portfolios.');
         }
 
-        // Handle file upload
-        $file = $this->request->getFile('portfolio_file');
-        if (!$file->isValid() || $file->hasMoved()) {
-            return $this->fail('Invalid file or file already moved.');
-        }
+	$filePath = null;
 
-        // Generate new filename and move file
-        $newFileName = $file->getRandomName();
-        $file->move(WRITEPATH . 'uploads/portfolios', $newFileName);
+        // Handle file upload if exists
+        if ($this->request->getFile('portfolio_file')) {
+            $file = $this->request->getFile('portfolio_file');
+            
+            if (!$file->isValid()) {
+                return $this->fail('Invalid file upload: ' . $file->getErrorString());
+            }
+
+            $uploadPath = WRITEPATH . 'uploads/portfolios';
+            if (!is_dir($uploadPath)) {
+                mkdir($uploadPath, 0777, true);
+            }
+
+            $newFileName = $file->getRandomName();
+            
+            if ($file->move($uploadPath, $newFileName)) {
+                $filePath = 'uploads/portfolios/' . $newFileName;
+            } else {
+                return $this->fail('Failed to upload file: ' . $file->getErrorString());
+            }
+        }
 
         // Prepare portfolio data
         $data = [
@@ -40,7 +54,7 @@ class PortfolioController extends ResourceController
             'title' => $this->request->getPost('title'),
             'description' => $this->request->getPost('description'),
             'category' => $this->request->getPost('category'),
-            'file_path' => 'uploads/portfolios/' . $newFileName,
+            'file_path' => $filePath,
             'likes' => 0,
         ];
 

@@ -124,3 +124,229 @@ DEBUG - 2025-01-06 08:50:35 --> Login attempt - Email: john@example.com
 DEBUG - 2025-01-06 08:50:35 --> Stored hash: $2y$10$ll8q9chKKhMZoY0q0S6vXOg96rZQPfNZeC6uzyuyLFd5MLrml4kLm
 DEBUG - 2025-01-06 08:50:35 --> Submitted password: password123
 INFO - 2025-01-06 08:50:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-01-06 09:16:33 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'ci4user'@'localhost' to database 'digicreate' in /var/www/html/system/Database/MySQLi/Connection.php:186
+Stack trace:
+#0 /var/www/html/system/Database/MySQLi/Connection.php(186): mysqli->real_connect()
+#1 /var/www/html/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /var/www/html/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 /var/www/html/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/html/system/Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 /var/www/html/system/BaseModel.php(714): CodeIgniter\Model->doFirst()
+#6 /var/www/html/app/Models/UserModel.php(16): CodeIgniter\BaseModel->first()
+#7 /var/www/html/app/Controllers/UserController.php(62): App\Models\UserModel->getUserByEmail()
+#8 /var/www/html/system/CodeIgniter.php(933): App\Controllers\UserController->login()
+#9 /var/www/html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+#10 /var/www/html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+#11 /var/www/html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 /var/www/html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#13 /var/www/html/public/index.php(56): CodeIgniter\Boot::bootWeb()
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' to database 'digicreate' in /var/www/html/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /var/www/html/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /var/www/html/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 /var/www/html/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query()
+#3 /var/www/html/system/Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#4 /var/www/html/system/BaseModel.php(714): CodeIgniter\Model->doFirst()
+#5 /var/www/html/app/Models/UserModel.php(16): CodeIgniter\BaseModel->first()
+#6 /var/www/html/app/Controllers/UserController.php(62): App\Models\UserModel->getUserByEmail()
+#7 /var/www/html/system/CodeIgniter.php(933): App\Controllers\UserController->login()
+#8 /var/www/html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+#9 /var/www/html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+#10 /var/www/html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 /var/www/html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#12 /var/www/html/public/index.php(56): CodeIgniter\Boot::bootWeb()
+#13 {main}
+CRITICAL - 2025-01-06 09:16:33 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' to database 'digicreate'
+[Method: POST, Route: users/login]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query()
+ 3 SYSTEMPATH/Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 5 APPPATH/Models/UserModel.php(16): CodeIgniter\BaseModel->first()
+ 6 APPPATH/Controllers/UserController.php(62): App\Models\UserModel->getUserByEmail()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\UserController->login()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ERROR - 2025-01-06 09:17:24 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'ci4user'@'localhost' to database 'digicreate' in /var/www/html/system/Database/MySQLi/Connection.php:186
+Stack trace:
+#0 /var/www/html/system/Database/MySQLi/Connection.php(186): mysqli->real_connect()
+#1 /var/www/html/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /var/www/html/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 /var/www/html/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/html/system/Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 /var/www/html/system/BaseModel.php(714): CodeIgniter\Model->doFirst()
+#6 /var/www/html/app/Models/UserModel.php(16): CodeIgniter\BaseModel->first()
+#7 /var/www/html/app/Controllers/UserController.php(62): App\Models\UserModel->getUserByEmail()
+#8 /var/www/html/system/CodeIgniter.php(933): App\Controllers\UserController->login()
+#9 /var/www/html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+#10 /var/www/html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+#11 /var/www/html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 /var/www/html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#13 /var/www/html/public/index.php(56): CodeIgniter\Boot::bootWeb()
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' to database 'digicreate' in /var/www/html/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /var/www/html/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /var/www/html/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 /var/www/html/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query()
+#3 /var/www/html/system/Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#4 /var/www/html/system/BaseModel.php(714): CodeIgniter\Model->doFirst()
+#5 /var/www/html/app/Models/UserModel.php(16): CodeIgniter\BaseModel->first()
+#6 /var/www/html/app/Controllers/UserController.php(62): App\Models\UserModel->getUserByEmail()
+#7 /var/www/html/system/CodeIgniter.php(933): App\Controllers\UserController->login()
+#8 /var/www/html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+#9 /var/www/html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+#10 /var/www/html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 /var/www/html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#12 /var/www/html/public/index.php(56): CodeIgniter\Boot::bootWeb()
+#13 {main}
+CRITICAL - 2025-01-06 09:17:24 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' to database 'digicreate'
+[Method: POST, Route: users/login]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query()
+ 3 SYSTEMPATH/Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 5 APPPATH/Models/UserModel.php(16): CodeIgniter\BaseModel->first()
+ 6 APPPATH/Controllers/UserController.php(62): App\Models\UserModel->getUserByEmail()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\UserController->login()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ERROR - 2025-01-06 09:17:40 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'ci4user'@'localhost' to database 'digicreate' in /var/www/html/system/Database/MySQLi/Connection.php:186
+Stack trace:
+#0 /var/www/html/system/Database/MySQLi/Connection.php(186): mysqli->real_connect()
+#1 /var/www/html/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /var/www/html/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 /var/www/html/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/html/system/Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 /var/www/html/system/BaseModel.php(714): CodeIgniter\Model->doFirst()
+#6 /var/www/html/app/Models/UserModel.php(16): CodeIgniter\BaseModel->first()
+#7 /var/www/html/app/Controllers/UserController.php(62): App\Models\UserModel->getUserByEmail()
+#8 /var/www/html/system/CodeIgniter.php(933): App\Controllers\UserController->login()
+#9 /var/www/html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+#10 /var/www/html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+#11 /var/www/html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 /var/www/html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#13 /var/www/html/public/index.php(56): CodeIgniter\Boot::bootWeb()
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' to database 'digicreate' in /var/www/html/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /var/www/html/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /var/www/html/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 /var/www/html/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query()
+#3 /var/www/html/system/Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#4 /var/www/html/system/BaseModel.php(714): CodeIgniter\Model->doFirst()
+#5 /var/www/html/app/Models/UserModel.php(16): CodeIgniter\BaseModel->first()
+#6 /var/www/html/app/Controllers/UserController.php(62): App\Models\UserModel->getUserByEmail()
+#7 /var/www/html/system/CodeIgniter.php(933): App\Controllers\UserController->login()
+#8 /var/www/html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+#9 /var/www/html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+#10 /var/www/html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 /var/www/html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#12 /var/www/html/public/index.php(56): CodeIgniter\Boot::bootWeb()
+#13 {main}
+CRITICAL - 2025-01-06 09:17:40 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' to database 'digicreate'
+[Method: POST, Route: users/login]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query()
+ 3 SYSTEMPATH/Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 5 APPPATH/Models/UserModel.php(16): CodeIgniter\BaseModel->first()
+ 6 APPPATH/Controllers/UserController.php(62): App\Models\UserModel->getUserByEmail()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\UserController->login()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-01-06 13:25:43 --> CodeIgniter\HTTP\Exceptions\HTTPException: Could not move file "phpVsAh6V" to "/var/www/html/writable/uploads/portfolios/". Reason: 
+[Method: POST, Route: portfolio/create]
+in SYSTEMPATH/HTTP/Files/UploadedFile.php on line 154.
+ 1 SYSTEMPATH/HTTP/Files/UploadedFile.php(154): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('phpVsAh6V', '/var/www/html/writable/uploads/portfolios/', '')
+ 2 APPPATH/Controllers/PortfolioController.php(35): CodeIgniter\HTTP\Files\UploadedFile->move('/var/www/html/writable/uploads/portfolios/', '1736169943_138a1f1e5fadc5a46807.png')
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PortfolioController->create()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PortfolioController))
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-06 13:27:29 --> CodeIgniter\HTTP\Exceptions\HTTPException: Could not move file "phpwWFlDW" to "/var/www/html/writable/uploads/portfolios/". Reason: 
+[Method: POST, Route: portfolio/create]
+in SYSTEMPATH/HTTP/Files/UploadedFile.php on line 154.
+ 1 SYSTEMPATH/HTTP/Files/UploadedFile.php(154): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('phpwWFlDW', '/var/www/html/writable/uploads/portfolios/', '')
+ 2 APPPATH/Controllers/PortfolioController.php(35): CodeIgniter\HTTP\Files\UploadedFile->move('/var/www/html/writable/uploads/portfolios/', '1736170049_3173ba14f4deea86d4e0.png')
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PortfolioController->create()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PortfolioController))
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-06 13:42:43 --> CodeIgniter\HTTP\Exceptions\HTTPException: Could not move file "phpp9FZSP" to "/var/www/html/writable/uploads/portfolios/". Reason: 
+[Method: POST, Route: portfolio/create]
+in SYSTEMPATH/HTTP/Files/UploadedFile.php on line 154.
+ 1 SYSTEMPATH/HTTP/Files/UploadedFile.php(154): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('phpp9FZSP', '/var/www/html/writable/uploads/portfolios/', '')
+ 2 APPPATH/Controllers/PortfolioController.php(44): CodeIgniter\HTTP\Files\UploadedFile->move('/var/www/html/writable/uploads/portfolios/', '1736170963_89fb4c5eea01bba2bef5.png')
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PortfolioController->create()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PortfolioController))
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-06 13:44:44 --> CodeIgniter\HTTP\Exceptions\HTTPException: Could not move file "php362mVs" to "/var/www/html/writable/uploads/portfolios/". Reason: 
+[Method: POST, Route: portfolio/create]
+in SYSTEMPATH/HTTP/Files/UploadedFile.php on line 154.
+ 1 SYSTEMPATH/HTTP/Files/UploadedFile.php(154): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('php362mVs', '/var/www/html/writable/uploads/portfolios/', '')
+ 2 APPPATH/Controllers/PortfolioController.php(44): CodeIgniter\HTTP\Files\UploadedFile->move('/var/www/html/writable/uploads/portfolios/', '1736171084_a92be7cfc8bb5d20379d.png')
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PortfolioController->create()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PortfolioController))
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-06 13:46:07 --> CodeIgniter\HTTP\Exceptions\HTTPException: Could not move file "phpMp2y5d" to "/var/www/html/writable/uploads/portfolios/". Reason: 
+[Method: POST, Route: portfolio/create]
+in SYSTEMPATH/HTTP/Files/UploadedFile.php on line 154.
+ 1 SYSTEMPATH/HTTP/Files/UploadedFile.php(154): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('phpMp2y5d', '/var/www/html/writable/uploads/portfolios/', '')
+ 2 APPPATH/Controllers/PortfolioController.php(44): CodeIgniter\HTTP\Files\UploadedFile->move('/var/www/html/writable/uploads/portfolios/', '1736171167_d4ace57e287c967f26e4.png')
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PortfolioController->create()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PortfolioController))
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-06 13:47:42 --> CodeIgniter\HTTP\Exceptions\HTTPException: Could not move file "phpwUFUcL" to "/var/www/html/writable/uploads/portfolios/". Reason: 
+[Method: POST, Route: portfolio/create]
+in SYSTEMPATH/HTTP/Files/UploadedFile.php on line 154.
+ 1 SYSTEMPATH/HTTP/Files/UploadedFile.php(154): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('phpwUFUcL', '/var/www/html/writable/uploads/portfolios/', '')
+ 2 APPPATH/Controllers/PortfolioController.php(44): CodeIgniter\HTTP\Files\UploadedFile->move('/var/www/html/writable/uploads/portfolios/', '1736171262_8c498d02bbe76196c423.png')
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PortfolioController->create()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PortfolioController))
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-06 13:50:47 --> ErrorException: Undefined variable $filepath
+[Method: POST, Route: portfolio/create]
+in APPPATH/Controllers/PortfolioController.php on line 57.
+ 1 APPPATH/Controllers/PortfolioController.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $filepath', '/var/www/html/app/Controllers/PortfolioController.php', 57)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PortfolioController->create()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PortfolioController))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
