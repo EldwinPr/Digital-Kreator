@@ -14,6 +14,7 @@ class PortfolioController extends ResourceController
         $this->portfolioModel = new PortfolioModel();
     }
 
+    // Create a new portfolio entry
     public function create()
     {
         // Check if user is logged in and has the 'creator' role
@@ -71,6 +72,7 @@ class PortfolioController extends ResourceController
         return $this->fail('Failed to create portfolio.');
     }
 
+    // Update an existing portfolio
     public function update($id = null)
     {
         // Check if user is logged in
@@ -133,6 +135,7 @@ class PortfolioController extends ResourceController
         return $this->fail('Failed to update portfolio.');
     }
 
+    // Delete a portfolio
     public function delete($id = null)
     {
         $userId = session()->get('user_id'); 
@@ -180,12 +183,14 @@ class PortfolioController extends ResourceController
         return $this->fail('Failed to delete portfolio.');
     }
 
+    // Find all portfolios
     public function findAll()
     {
         $portfolios = $this->portfolioModel->findAllPortfolios();
         return $this->respond($portfolios);
     }
 
+    // Find portfolio by ID
     public function findById($id = null)
     {
         $id = $id ?? $this->request->getGet('id');
@@ -197,6 +202,7 @@ class PortfolioController extends ResourceController
         return $this->respond($portfolio);
     }
 
+    // Find portfolios by creator
     public function findByCreator($name = null)
     {
         // Get creator name from query string if not in URL
@@ -215,6 +221,7 @@ class PortfolioController extends ResourceController
         ]);
     }
 
+    // Find portfolios by category
     public function findByCategory($category = null)
     {
         $category = $this->request->getGet('category') ?? $category;
@@ -227,6 +234,7 @@ class PortfolioController extends ResourceController
         ]);
     }
 
+    // Like a portfolio
     public function like($id = null)
     {
         // Check if user is logged in
