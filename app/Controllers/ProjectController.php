@@ -73,40 +73,52 @@ class ProjectController extends ResourceController
         return $this->fail('Failed to delete project.');
     }
 
-    public function update($id = null){
+    public function update($id = null) {
+        // Check user authentication
         $userId = session()->get('user_id'); 
         $userRole = session()->get('user_role');
-
-
+    
+        if (!$userId) {
+            return $this->failUnauthorized('You must be logged in.');
+        }
+    
+        // Get project ID from URL or POST
+        $projectId = $id ?? $this->request->getPost('id');
+        if (!$projectId) {
+            return $this->fail('Project ID is required.');
+        }
+    
         // Check Project exists
-        $project = $this->projectModel->find($this->request->getPost('id'));
+        $project = $this->projectModel->find($projectId);
         if (!$project) {
             return $this->failNotFound('Project not found.');
         }
-
+    
         // Check if the logged-in user is the creator or an admin
         $creatorId = $project['creator_id'] ?? null;
         if ($creatorId != $userId && $userRole !== 'admin') {
             return $this->failUnauthorized('You are not authorized to update this project.');
         }
-
-        // Prepare data from the request
+    
+        // Prepare data from the request, using existing values if not provided
         $data = [
-            'title' => $this->request->getPost('title'),
-            'description' => $this->request->getPost('description'),
-            'category' => $this->request->getPost('category'),
-            'status' => $this->request->getPost('status'),
-            'deadline' => $this->request->getPost('deadline'),
+            'title' => $this->request->getPost('title') ?? $project['title'],
+            'description' => $this->request->getPost('description') ?? $project['description'],
+            'category' => $this->request->getPost('category') ?? $project['category'],
+            'status' => $this->request->getPost('status') ?? $project['status'],
+            'deadline' => $this->request->getPost('deadline') ?? $project['deadline'],
             'updated_at' => date('Y-m-d H:i:s')
         ];
-
+    
         // Update the project
-        if ($this->projectModel->updateProject($this->request->getPost('id'), $data)) {
+        if ($this->projectModel->updateProject($projectId, $data)) {
             return $this->respondUpdated([
                 'message' => 'Project updated successfully!',
                 'data' => $data
             ]);
         }
+    
+        return $this->fail('Failed to update project.');
     }
 
     public function findAllProjects(){
