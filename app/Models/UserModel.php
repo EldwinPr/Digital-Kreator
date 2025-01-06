@@ -27,4 +27,8 @@ class UserModel extends Model
     public function deleteUser($id){
         return $this->delete($id);
     }
+
+    public function getUserByName($name){
+        return $this->where('name', $name)->asObject()->first();
+    }
 }

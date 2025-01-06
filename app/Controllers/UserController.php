@@ -126,4 +126,15 @@ class UserController extends ResourceController
             'role' => $user->role
         ]);
     }
+
+    public function getUserByName($name = null){
+        $name = $name ?? $this->request->getGet('name');
+        $user = $this->userModel->getUserByName($name);
+
+        if (!$user) {
+            return $this->failNotFound('User not found');
+        }
+
+        return $this->respond($user);
+    }
 }

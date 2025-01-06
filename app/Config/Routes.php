@@ -12,6 +12,7 @@ $routes->group('users', function($routes) {
     $routes->add('login', 'UserController::login');
     $routes->add('logout', 'UserController::logout');
     $routes->add('profile', 'UserController::profile');
+    $routes->add('getid', 'UserController::getUserByName');
 });
 
 $routes->group('project', function($routes) {
