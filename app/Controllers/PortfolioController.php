@@ -239,7 +239,7 @@ class PortfolioController extends ResourceController
         }
 
         // Get portfolio ID
-        $portfolioId = $id ?? $this->request->getPost('id');
+        $portfolioId = $id ?? $this->request->getGet('id');
         
         if (!$portfolioId) {
             return $this->fail('Portfolio ID is required');
