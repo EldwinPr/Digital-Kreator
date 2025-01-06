@@ -188,14 +188,12 @@ class PortfolioController extends ResourceController
 
     public function findById($id = null)
     {
-        log_message('debug', 'Searching for portfolio with ID: ' . $id);
+        $id = $id ?? $this->request->getGet('id');
         $portfolio = $this->portfolioModel->findById($id);
-        log_message('debug', 'Portfolio found: ' . print_r($portfolio, true));
-        
         if (!$portfolio) {
-            return $this->respond([]);
+            return $this->failNotFound('Portfolio not found.');
         }
-    
+
         return $this->respond($portfolio);
     }
 
