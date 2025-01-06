@@ -1,0 +1,122 @@
+INFO - 2025-01-06 02:04:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-06 02:04:56 --> Login attempt - Email: john@example.com
+DEBUG - 2025-01-06 02:04:57 --> Stored hash: $2y$10$ll8q9chKKhMZoY0q0S6vXOg96rZQPfNZeC6uzyuyLFd5MLrml4kLm
+DEBUG - 2025-01-06 02:04:57 --> Submitted password: password123
+INFO - 2025-01-06 02:04:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 02:05:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-06 02:05:02 --> ErrorException: Attempt to read property "creator_id" on array
+[Method: POST, Route: portfolio/update]
+in APPPATH\Controllers\PortfolioController.php on line 84.
+ 1 APPPATH\Controllers\PortfolioController.php(84): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "creator_id" on array', 'D:\\XAMPP\\htdocs\\Tubes TST\\app\\Controllers\\PortfolioController.php', 84)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PortfolioController->update()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PortfolioController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('D:\\XAMPP\\htdocs\\Tubes TST\\public\\index.php')
+INFO - 2025-01-06 02:10:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 02:12:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-06 02:12:56 --> ErrorException: Undefined array key "creator_id"
+[Method: GET, Route: portfolio/delete]
+in APPPATH\Controllers\PortfolioController.php on line 135.
+ 1 APPPATH\Controllers\PortfolioController.php(135): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "creator_id"', 'D:\\XAMPP\\htdocs\\Tubes TST\\app\\Controllers\\PortfolioController.php', 135)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PortfolioController->delete()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PortfolioController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('D:\\XAMPP\\htdocs\\Tubes TST\\public\\index.php')
+INFO - 2025-01-06 02:14:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-06 02:14:26 --> Error: Call to undefined method App\Controllers\PortfolioController::asobject()
+[Method: GET, Route: portfolio/delete]
+in APPPATH\Controllers\PortfolioController.php on line 135.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PortfolioController->delete()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PortfolioController))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('D:\\XAMPP\\htdocs\\Tubes TST\\public\\index.php')
+INFO - 2025-01-06 02:16:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 02:16:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 02:18:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-06 02:18:41 --> TypeError: CodeIgniter\RESTful\ResourceController::fail(): Argument #2 ($status) must be of type int, null given, called in D:\XAMPP\htdocs\Tubes TST\app\Controllers\PortfolioController.php on line 131
+[Method: GET, Route: portfolio/delete]
+in SYSTEMPATH\API\ResponseTrait.php on line 128.
+ 1 APPPATH\Controllers\PortfolioController.php(131): CodeIgniter\RESTful\ResourceController->fail('Portfolio ID is required.', null)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PortfolioController->delete()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PortfolioController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('D:\\XAMPP\\htdocs\\Tubes TST\\public\\index.php')
+CRITICAL - 2025-01-06 02:23:09 --> ErrorException: Declaration of App\Controllers\PortfolioController::delete() must be compatible with CodeIgniter\RESTful\ResourceController::delete($id = null)
+[Method: GET, Route: portfolio/delete]
+in APPPATH\Controllers\PortfolioController.php on line 123.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2025-01-06 02:23:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-06 02:23:53 --> URL ID: 
+DEBUG - 2025-01-06 02:23:53 --> POST ID: 
+INFO - 2025-01-06 02:24:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-06 02:24:50 --> URL ID: 
+DEBUG - 2025-01-06 02:24:50 --> POST ID: 1
+INFO - 2025-01-06 02:27:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-06 02:37:13 --> Category: 
+DEBUG - 2025-01-06 02:37:13 --> Query: SELECT *
+FROM `portfolios`
+WHERE `category` IS NULL
+DEBUG - 2025-01-06 02:37:13 --> Result: []
+DEBUG - 2025-01-06 02:37:54 --> Received category: 
+DEBUG - 2025-01-06 02:37:54 --> Final category used: 
+DEBUG - 2025-01-06 02:37:54 --> Category: 
+DEBUG - 2025-01-06 02:37:54 --> Query: SELECT *
+FROM `portfolios`
+WHERE `category` IS NULL
+DEBUG - 2025-01-06 02:37:54 --> Result: []
+DEBUG - 2025-01-06 02:38:06 --> Received category: 
+DEBUG - 2025-01-06 02:38:06 --> Final category used: 
+DEBUG - 2025-01-06 02:38:06 --> Category: 
+DEBUG - 2025-01-06 02:38:06 --> Query: SELECT *
+FROM `portfolios`
+WHERE `category` IS NULL
+DEBUG - 2025-01-06 02:38:06 --> Result: []
+DEBUG - 2025-01-06 02:38:09 --> Received category: 
+DEBUG - 2025-01-06 02:38:09 --> Final category used: 
+DEBUG - 2025-01-06 02:38:09 --> Category: 
+DEBUG - 2025-01-06 02:38:09 --> Query: SELECT *
+FROM `portfolios`
+WHERE `category` IS NULL
+DEBUG - 2025-01-06 02:38:09 --> Result: []
+DEBUG - 2025-01-06 02:39:08 --> Received category: 
+DEBUG - 2025-01-06 02:39:08 --> Final category used: logo
+DEBUG - 2025-01-06 02:39:08 --> Category: logo
+DEBUG - 2025-01-06 02:39:08 --> Query: SELECT *
+FROM `portfolios`
+WHERE `category` = 'logo'
+DEBUG - 2025-01-06 02:39:08 --> Result: [{"id":"2","creator_id":"2","title":"Logo Design 1","description":"deskripsi logo design 1","category":"logo","file_path":"uploads\/portfolios\/1736130440_88910cca474050ed836d.png","rating_count":"0","rating_average":"0.00","created_at":"2025-01-06 02:27:20","updated_at":"2025-01-06 02:27:20"}]
+DEBUG - 2025-01-06 02:39:57 --> Category: logo
+DEBUG - 2025-01-06 02:39:57 --> Query: SELECT *
+FROM `portfolios`
+WHERE `category` = 'logo'
+DEBUG - 2025-01-06 02:39:57 --> Result: [{"id":"2","creator_id":"2","title":"Logo Design 1","description":"deskripsi logo design 1","category":"logo","file_path":"uploads\/portfolios\/1736130440_88910cca474050ed836d.png","rating_count":"0","rating_average":"0.00","created_at":"2025-01-06 02:27:20","updated_at":"2025-01-06 02:27:20"}]
+INFO - 2025-01-06 02:50:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 02:51:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 02:51:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 02:52:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-06 02:52:25 --> Portfolio ID: 
+DEBUG - 2025-01-06 02:52:25 --> Rating Value: 
+INFO - 2025-01-06 03:22:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 03:22:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 03:22:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 03:23:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 03:23:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 03:24:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 03:25:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 03:25:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-06 04:22:39 --> Login attempt - Email: john@example.com
+DEBUG - 2025-01-06 04:22:39 --> Stored hash: $2y$10$ll8q9chKKhMZoY0q0S6vXOg96rZQPfNZeC6uzyuyLFd5MLrml4kLm
+DEBUG - 2025-01-06 04:22:39 --> Submitted password: password123
+INFO - 2025-01-06 04:22:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
