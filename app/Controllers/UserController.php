@@ -137,4 +137,26 @@ class UserController extends ResourceController
 
         return $this->respond($user->id);
     }
+
+    public function getUsername($id = null){
+        $id = $id ?? $this->request->getGet('id');
+        $user = $this->userModel->find($id);
+
+        if (!$user) {
+            return $this->failNotFound('User not found');
+        }
+
+        return $this->respond($user->name);
+    }
+
+    public function findById($id = null){
+        $id = $id ?? $this->request->getGet('id');
+        $user = $this->userModel->find($id);
+
+        if (!$user) {
+            return $this->failNotFound('User not found');
+        }
+
+        return $this->respond($user);
+    }
 }

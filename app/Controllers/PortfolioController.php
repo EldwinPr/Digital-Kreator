@@ -254,4 +254,18 @@ class PortfolioController extends ResourceController
 
         return $this->fail('Failed to like portfolio.');
     }
+
+    //helper functions
+    
+    public function getImage($filename)
+    {
+        $path = WRITEPATH . 'uploads/portfolios/' . $filename;
+        if (file_exists($path)) {
+            $mime = mime_content_type($path);
+            header('Content-Type: ' . $mime);
+            readfile($path);
+            exit;
+        }
+        return $this->failNotFound('Image not found');
+    }
 }

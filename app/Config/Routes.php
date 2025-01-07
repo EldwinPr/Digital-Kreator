@@ -13,6 +13,8 @@ $routes->group('users', function($routes) {
     $routes->add('logout', 'UserController::logout');
     $routes->add('profile', 'UserController::profile');
     $routes->add('getid', 'UserController::getUserByName');
+    $routes->add('getName', 'UserController::getUsername');
+    $routes->add('findById', 'UserController::findById');
 });
 
 $routes->group('project', function($routes) {
@@ -33,4 +35,5 @@ $routes->group('portfolio', function($routes) {
     $routes->add('findByCreator', 'PortfolioController::findByCreator');
     $routes->add('findByCategory', 'PortfolioController::findByCategory');
     $routes->add('like/(:num)', 'PortfolioController::like/$1');
+    $routes->add('image/(:segment)', 'PortfolioController::getImage/$1');
 });
