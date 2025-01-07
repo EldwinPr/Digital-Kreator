@@ -13,7 +13,7 @@ $routes->group('users', function($routes) {
     $routes->add('logout', 'UserController::logout');
     $routes->add('profile', 'UserController::profile');
     $routes->add('getid', 'UserController::getUserByName');
-    $routes->add('getName', 'UserController::getUsername');
+    $routes->add('findNameById', 'UserController::findNameById');
     $routes->add('findById', 'UserController::findById');
 });
 
